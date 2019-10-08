@@ -8,6 +8,7 @@ wget http://10.221.128.158:90/cms/agent/agent-updater
 wget http://10.221.128.158:90/cms/agent/agent-updater.service
 
 #mv
+mkdir -p /usr/local/agent
 mv agent-updater /usr/local/agent/agent-updater
 mv agent-updater.service /lib/systemd/system/agent-updater.service
 #Install
