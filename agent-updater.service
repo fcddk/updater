@@ -1,1 +1,16 @@
+[Unit]
+Description=agent-updater used to manage agents
+After=network.target
+
+[Service]
+User=root
+WorkingDirectory=/usr/local/agent/
+ExecStart=/usr/local/agent/agent-updater
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+RestartForceExitStatus=SIGPIPE
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
 
